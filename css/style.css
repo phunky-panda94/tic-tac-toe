@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.board {
+    height: 300px;
+    width: 100vw;
+
+     /*use grid because aligning items in both dimensions*/
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+
+    justify-content: center;
+    align-content: center;
+
+    justify-items: center;
+    align-items: center;
+}
+
+#reset {
+    font-weight: 700;
+    margin-top: 20px;
+    padding: 10px;
+    width: calc(150px);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.reset-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.square {
+    border: 1px solid black;
+    height: 100px;
+    width: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+} 
+
+.square.x,
+.square.o {
+    cursor: not-allowed;
+}
+
+
+/* Crosses */
+
+.square.x::before ,
+.square.x::after,
+.board.x .square:not(.x):not(.o):hover::before,
+.board.x .square:not(.x):not(.o):hover::after {
+    background-color: black;
+    content: '';
+    height: calc(100px * 0.9);
+    width: calc(100px * 0.1);
+    position: absolute;
+}
+
+.board.x .square:not(.x):not(.o):hover::before,
+.board.x .square:not(.x):not(.o):hover::after {
+    background-color: lightgrey;
+}
+
+.square.x::before,
+.board.x .square:not(.x):not(.o):hover::before {
+    transform: rotate(45deg);
+}
+
+.square.x::after,
+.board.x .square:not(.x):not(.o):hover::after {
+    transform: rotate(-45deg);
+}
+
+/* Knots */
+
+.square.o::before,
+.square.o::after,
+.board.o .square:not(.x):not(.o):hover::before,
+.board.o .square:not(.x):not(.o):hover::after {
+    border-radius: 50%;
+    content: '';
+    position: absolute;
+}
+
+.square.o::before,
+.board.o .square:not(.x):not(.o):hover::before {
+    background-color: black;
+    height: calc(100px * 0.8);
+    width: calc(100px * 0.8);
+}
+
+.board.o .square:not(.x):not(.o):hover::before,
+.board.o .square:not(.x):not(.o):hover::after {
+    background-color: lightgrey;
+}
+
+.square.o::after,
+.board.o .square:not(.x):not(.o):hover::after {
+    background-color: white;
+    height: calc(100px * 0.6);
+    width: calc(100px * 0.6);
+}
+
