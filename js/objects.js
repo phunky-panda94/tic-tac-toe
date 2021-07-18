@@ -17,9 +17,7 @@ export const gameBoard = (() => {
 
     ];
 
-    return {
-        winningCombinations
-    };
+    return { winningCombinations };
 
 })();
 
