@@ -29,6 +29,7 @@ body {
 #reset {
     background-color: #dddddd;
     border: none;
+    border-radius: 5px;
     color: #1c1c1c;
     font-size: 16px;
     font-weight: 700;
@@ -38,6 +39,7 @@ body {
 
 #reset:hover {
     cursor: pointer;
+    transform: scale(1.1);
 }
 
 .container {
@@ -95,7 +97,7 @@ html {
 .square.x::after,
 .board.x .square:not(.x):not(.o):hover::before,
 .board.x .square:not(.x):not(.o):hover::after {
-    background-color: #dddddd;
+    background-color: #4c843c;
     content: '';
     height: calc(100px * 0.9);
     width: calc(100px * 0.1);
@@ -130,7 +132,7 @@ html {
 
 .square.o::before,
 .board.o .square:not(.x):not(.o):hover::before {
-    background-color: #dddddd;
+    background-color: #a4d454;
     height: calc(100px * 0.8);
     width: calc(100px * 0.8);
 }
